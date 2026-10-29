@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102b46">
+<meta name="description" content="Premium Plumbing provides plumbing repairs, drain cleaning, water heater service, installations, and booking requests.">
+<title>Premium Plumbing | Expert service, handled.</title>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23102b46'/%3E%3Cpath d='M20 10v15a12 12 0 0 0 24 0V10' fill='none' stroke='%234ad6c8' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M32 35c-7 9-11 13-11 18a11 11 0 0 0 22 0c0-5-4-9-11-18z' fill='%23ffb35c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#102b46;
+  --paper:#f4f5f2;
+  --white:#fff;
+  --muted:#5d6c77;
+  --line:rgba(16,43,70,.19);
+  --dark-line:rgba(255,255,255,.2);
+  --glass:rgba(255,255,255,.12);
+  --navy:#102b46;
+  --blue:#2463a6;
+  --teal:#4ad6c8;
+  --orange:#ffb35c;
+  --sky:#dceefa;
+  --gutter:clamp(22px,5.2vw,76px);
+  --ease:cubic-bezier(.22,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Times New Roman",Times,serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button,a{ -webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+img{display:block;max-width:100%}
+::selection{background:var(--navy);color:#fff}
+.topline{height:5px;background:linear-gradient(90deg,var(--teal),var(--blue),var(--orange))}
+.site-header{position:absolute;z-index:20;top:22px;left:var(--gutter);right:var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-size:21px;letter-spacing:-.04em;font-weight:bold}
+.brand-mark{width:38px;height:38px;border:1px solid #111;border-radius:50%;display:grid;place-items:center;font-family:Arial,sans-serif;font-size:22px;font-weight:500}
+.nav-shell{display:flex;align-items:center;gap:5px;padding:6px;background:rgba(255,255,255,.74);border:1px solid rgba(17,17,17,.1);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.nav-shell a{padding:12px 15px;font-size:14px;transition:background .2s,color .2s}
+.nav-shell a:hover,.nav-shell a.active{background:var(--navy);color:#fff}
+.header-actions{display:flex;align-items:center;gap:18px;font-size:14px}
+.text-link{border-bottom:1px solid #111;padding:5px 0}
+.button{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;min-height:48px;padding:0 17px;background:var(--navy);color:#fff;border:1px solid #111;transition:transform .2s var(--ease),background .2s,color .2s;white-space:nowrap}
+.button:hover{transform:translateY(-2px);background:#333}
+.button .arrow{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--teal);color:var(--navy);font-family:Arial,sans-serif;font-size:16px;transition:transform .25s var(--ease)}
+.button:hover .arrow{transform:rotate(45deg)}
+.button.light{background:var(--teal);color:var(--navy);border-color:var(--teal)}
+.button.light .arrow{background:var(--navy);color:#fff}
+.hero{position:relative;min-height:850px;height:min(940px,100svh);background:#dceefa;overflow:hidden;isolation:isolate}
+.hero-photo{position:absolute;inset:0 0 0 34%;z-index:-2}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 43%;filter:saturate(1.08) contrast(1.02);opacity:.96}
+.hero-photo:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#dceefa 0%,rgba(220,238,250,.96) 8%,rgba(220,238,250,.22) 46%,rgba(16,43,70,.06) 100%)}
+.hero-photo:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(16,43,70,.66),transparent 43%)}
+.hero-copy{position:relative;z-index:2;padding:190px var(--gutter) 70px;max-width:850px}
+.eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;font-family:Arial,sans-serif;font-size:11px;letter-spacing:.13em;font-weight:600}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#111}
+.hero h1{font-size:clamp(68px,10.4vw,150px);font-weight:400;line-height:.79;letter-spacing:-.075em;margin:35px 0 29px;max-width:780px}
+.hero h1 span{display:block}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--navy)}
+.hero-description{font-size:20px;line-height:1.35;max-width:365px}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:25px;margin-top:45px}
+.hero-note{font-family:Arial,sans-serif;font-size:12px;line-height:1.55;max-width:185px;color:#373735}
+.hero-note strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px;color:#111}
+.hero-stamp{position:absolute;right:var(--gutter);bottom:40px;width:142px;height:142px;border:1px solid rgba(255,255,255,.65);border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-family:Arial,sans-serif;font-size:10px;letter-spacing:.12em;line-height:1.5;backdrop-filter:blur(8px);background:rgba(0,0,0,.12);transform:rotate(-12deg)}
+.hero-stamp b{font-family:"Times New Roman",serif;display:block;font-size:25px;font-weight:400;letter-spacing:-.04em}
+.ticker{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px var(--gutter);background:var(--navy);color:#fff;font-family:Arial,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.ticker span:nth-child(2){color:#aaa}
+.section{padding:120px var(--gutter)}
+.section-kicker{font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);margin-bottom:25px}
+.section-heading{font-size:clamp(42px,6.3vw,88px);line-height:.94;letter-spacing:-.06em;font-weight:400;max-width:850px}
+.section-heading em{font-weight:400;color:#777}
+.intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:9vw;align-items:end}
+.intro-copy{max-width:420px;font-size:19px;line-height:1.45}
+.intro-copy p+p{margin-top:19px}
+.services{background:var(--navy);color:#f4f4f2}
+.services-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:54px}
+.services .section-kicker{color:#aaa}
+.services .section-heading{max-width:670px}
+.services-intro{font-family:Arial,sans-serif;font-size:13px;line-height:1.5;color:#aaa;max-width:230px}
+.service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--dark-line);border-left:1px solid var(--dark-line)}
+.service-card{min-height:280px;padding:24px 22px 22px;border-right:1px solid var(--dark-line);border-bottom:1px solid var(--dark-line);display:flex;flex-direction:column;justify-content:space-between;transition:background .25s}
+.service-card:hover{background:#202020}
+.service-number{font-family:Arial,sans-serif;font-size:11px;color:#8c8c8c}
+.service-icon{font-family:Arial,sans-serif;font-size:34px;font-weight:200}
+.service-card h3{font-size:27px;font-weight:400;letter-spacing:-.035em;margin-bottom:10px}
+.service-card p{font-family:Arial,sans-serif;font-size:12px;line-height:1.55;color:#aaa;max-width:240px}
+.service-card .card-arrow{align-self:flex-end;font-family:Arial,sans-serif;font-size:24px;transition:transform .2s}
+.service-card:hover .card-arrow{transform:translate(3px,-3px)}
+.emergency{display:grid;grid-template-columns:1fr 1fr;min-height:520px;background:#dceefa}
+.emergency-image{position:relative;min-height:420px;overflow:hidden}
+.emergency-image img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(1.08)}
+.emergency-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.45),transparent 65%)}
+.image-caption{position:absolute;z-index:1;bottom:24px;left:25px;color:white;font-family:Arial,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.emergency-content{padding:clamp(35px,6vw,85px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.emergency-content h2{font-size:clamp(43px,5.7vw,76px);line-height:.94;letter-spacing:-.06em;font-weight:400;margin:15px 0 22px}
+.emergency-content p{font-size:18px;line-height:1.45;max-width:390px;margin-bottom:28px}
+.emergency-small{font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#555;margin-top:17px}
+.booking{background:#ececea}
+.booking-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:9vw;align-items:start}
+.booking-info .section-heading{font-size:clamp(43px,5.4vw,72px)}
+.booking-info p{font-size:18px;line-height:1.45;max-width:360px;margin-top:25px}
+.booking-info .contact-line{display:block;margin-top:35px;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.04em}
+.booking-form{display:grid;grid-template-columns:1fr 1fr;gap:20px 18px;border-top:1px solid var(--line);padding-top:25px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.field input,.field select,.field textarea{width:100%;border:0;border-bottom:1px solid #999;background:transparent;padding:12px 0;color:#111;border-radius:0;outline:none;font-size:17px}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:#111}
+.field textarea{resize:vertical;min-height:90px}
+.form-footer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:8px}
+.form-note{font-family:Arial,sans-serif;font-size:11px;line-height:1.45;color:#666;max-width:210px}
+.form-status{grid-column:1/-1;display:none;padding:13px 15px;border:1px solid #111;font-family:Arial,sans-serif;font-size:13px;line-height:1.45}
+.form-status.show{display:block}
+.trust{background:var(--navy);color:#f4f4f2;padding-top:90px;padding-bottom:90px}
+.trust-top{display:flex;align-items:end;justify-content:space-between;gap:30px;padding-bottom:40px;border-bottom:1px solid var(--dark-line)}
+.trust .section-kicker{color:#aaa}
+.trust .section-heading{font-size:clamp(40px,5vw,68px)}
+.trust-top p{max-width:300px;font-family:Arial,sans-serif;font-size:12px;line-height:1.6;color:#aaa}
+.trust-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:12px;margin-top:18px}
+.trust-card{border:1px solid var(--dark-line);padding:25px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s var(--ease),background .25s}
+.trust-card:hover{transform:translateY(-5px);background:#191919}
+.trust-card .big{font-size:56px;letter-spacing:-.07em;line-height:1}
+.trust-card .label{font-family:Arial,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#aaa}
+.trust-card p{font-size:17px;line-height:1.35;max-width:260px}
+.trust-card.featured{background:#dceefa;color:#111;border-color:#d9d9d7}
+.trust-card.featured .label{color:#555}
+.trust-card.featured p{color:#333}
+.trust-card.featured .big{font-size:47px}
+.trust-card.featured .avatar-row{display:flex;align-items:center;margin-bottom:12px}
+.avatar{width:37px;height:37px;border:2px solid #d9d9d7;border-radius:50%;display:grid;place-items:center;margin-right:-8px;background:#333;color:#fff;font-family:Arial,sans-serif;font-size:10px}
+.avatar:nth-child(2){background:#777}.avatar:nth-child(3){background:#aaa;color:#111}.avatar:nth-child(4){background:#555}
+.faq{background:#f0f0ee}
+.faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:9vw}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-question{width:100%;display:flex;justify-content:space-between;gap:20px;align-items:center;text-align:left;border:0;background:transparent;padding:22px 0;font-size:22px;color:#111}
+.faq-question span:last-child{font-family:Arial,sans-serif;font-size:22px;transition:transform .2s}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.faq-answer p{font-size:16px;line-height:1.5;color:#555;max-width:600px;padding:0 30px 22px 0}
+.faq-item.open .faq-answer{max-height:180px}
+.faq-item.open .faq-question span:last-child{transform:rotate(45deg)}
+.footer{background:var(--navy);color:#fff;padding:60px var(--gutter) 25px}
+.footer-top{display:flex;justify-content:space-between;align-items:start;gap:30px;padding-bottom:60px}
+.footer-title{font-size:clamp(45px,7vw,92px);letter-spacing:-.07em;line-height:.9;max-width:650px}
+.footer-right{font-family:Arial,sans-serif;font-size:12px;line-height:1.8;color:#aaa}
+.footer-bottom{border-top:1px solid var(--dark-line);padding-top:18px;display:flex;justify-content:space-between;gap:20px;color:#aaa;font-family:Arial,sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.mobile-menu{display:none}
+@media(max-width:900px){
+  .site-header{top:15px}.nav-shell{display:none}.header-actions .text-link{display:none}.mobile-menu{display:inline-flex;align-items:center;justify-content:center;width:43px;height:43px;border:1px solid #111;background:rgba(255,255,255,.8);font-family:Arial,sans-serif;font-size:20px}
+  .hero{min-height:800px;height:94svh;max-height:980px}.hero-photo{left:18%;opacity:.75}.hero-photo:before{background:linear-gradient(90deg,#d9d9d7 0%,rgba(217,217,215,.8) 25%,rgba(217,217,215,.12) 90%)}
+  .hero-copy{padding-top:175px}.hero h1{font-size:clamp(65px,13vw,118px)}.hero-stamp{width:105px;height:105px;font-size:8px;right:25px;bottom:28px}
+  .intro-grid,.booking-layout,.faq-layout{grid-template-columns:1fr;gap:35px}
+  .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .services-top,.trust-top{align-items:flex-start;flex-direction:column}
+  .emergency{grid-template-columns:1fr}.emergency-image{min-height:360px}.emergency-content{padding:55px var(--gutter)}
+  .trust-grid{grid-template-columns:1fr 1fr}.trust-card:last-child{grid-column:1/-1;min-height:170px}
+}
+@media(max-width:560px){
+  :root{--gutter:22px}
+  .brand{font-size:18px}.brand-mark{width:33px;height:33px}
+  .header-actions .button{min-height:42px;padding:0 10px;gap:10px;font-size:12px}.header-actions .button .arrow{width:21px;height:21px}
+  .hero{min-height:780px;height:100svh;max-height:900px}.hero-photo{left:0;top:250px;opacity:.82}.hero-photo img{object-position:55% center}.hero-photo:before{background:linear-gradient(180deg,#d9d9d7 0%,rgba(217,217,215,.78) 16%,rgba(217,217,215,.08) 55%,rgba(0,0,0,.1) 100%)}
+  .hero-copy{padding-top:145px}.eyebrow{font-size:9px}.hero h1{font-size:clamp(60px,16vw,88px);margin:25px 0 18px}.hero-description{font-size:17px;max-width:290px}.hero-bottom{align-items:flex-start;flex-direction:column;margin-top:25px;gap:18px}.hero-note{display:none}.hero-stamp{bottom:25px;right:20px}
+  .ticker{padding:16px var(--gutter);font-size:9px}.ticker span:nth-child(2){display:none}
+  .section{padding-top:78px;padding-bottom:78px}.section-heading{font-size:clamp(43px,12vw,60px)}
+  .intro-copy{font-size:17px}.service-grid{grid-template-columns:1fr 1fr}.service-card{min-height:235px;padding:16px 13px}.service-card h3{font-size:21px}.service-card p{font-size:11px}
+  .services-top{margin-bottom:30px}.services-intro{max-width:290px}
+  .emergency-image{min-height:290px}.emergency-content{padding:43px var(--gutter)}.emergency-content h2{font-size:54px}.emergency-content p{font-size:16px}
+  .booking-form{grid-template-columns:1fr;gap:18px}.field.full,.form-footer,.form-status{grid-column:1}.form-footer{align-items:flex-start;flex-direction:column}.booking-info p{font-size:16px}
+  .trust{padding-top:72px;padding-bottom:72px}.trust-grid{grid-template-columns:1fr}.trust-card,.trust-card:last-child{grid-column:auto;min-height:190px}.trust-card .big{font-size:48px}
+  .faq-question{font-size:19px}.footer-top{flex-direction:column;padding-bottom:40px}.footer-title{font-size:58px}.footer-bottom{flex-direction:column;gap:9px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+
+/* Premium Plumbing visual polish */
+.brand-mark{border-color:var(--blue);background:var(--navy);color:var(--teal);box-shadow:0 0 0 4px rgba(74,214,200,.14)}
+.nav-shell{border-color:rgba(36,99,166,.18)}
+.nav-shell a:hover,.nav-shell a.active{background:var(--blue);color:#fff}
+.button{background:var(--navy);border-color:var(--navy);box-shadow:0 7px 18px rgba(16,43,70,.10)}
+.button:hover{background:var(--blue);border-color:var(--blue);box-shadow:0 12px 24px rgba(36,99,166,.2)}
+.button .arrow{background:var(--teal);color:var(--navy)}
+.button.light{background:var(--teal);border-color:var(--teal);color:var(--navy)}
+.button.light .arrow{background:var(--navy);color:#fff}
+.hero{background:#dceefa}
+.hero .eyebrow:before{background:var(--orange);box-shadow:0 0 0 5px rgba(255,179,92,.22)}
+.hero-stamp{border-color:rgba(74,214,200,.75);background:rgba(16,43,70,.38);box-shadow:0 12px 40px rgba(16,43,70,.12)}
+.ticker{background:var(--navy);border-top:3px solid var(--teal)}
+.ticker span:nth-child(2){color:var(--teal)}
+.section-kicker{color:var(--blue)}
+.section-heading em{color:var(--blue)}
+.services{background:var(--navy)}
+.services .section-heading em{color:var(--teal)}
+.service-card{position:relative;overflow:hidden}
+.service-card:before{content:"";position:absolute;inset:auto 0 0;height:3px;background:linear-gradient(90deg,var(--teal),var(--orange));transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.service-card:hover:before{transform:scaleX(1)}
+.service-icon{width:64px;height:64px;display:grid;place-items:center;background:rgba(74,214,200,.12);color:var(--teal);border:1px solid rgba(74,214,200,.25);padding:13px;transition:transform .35s var(--ease),background .35s}
+.service-icon svg{width:100%;height:100%;overflow:visible}
+.service-card:nth-child(4n+2) .service-icon{color:var(--orange);background:rgba(255,179,92,.11);border-color:rgba(255,179,92,.28)}
+.service-card:nth-child(4n+3) .service-icon{color:#82c5ff;background:rgba(130,197,255,.11);border-color:rgba(130,197,255,.28)}
+.service-card:hover .service-icon{transform:translateY(-4px) rotate(-3deg);background:rgba(74,214,200,.2)}
+.emergency{background:#e3f0f5}
+.emergency-image img{filter:saturate(1.08)}
+.emergency-content .eyebrow:before{background:var(--orange)}
+.booking{background:#f4f5f2}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--blue);box-shadow:0 2px 0 rgba(36,99,166,.14)}
+.form-status{border-color:var(--blue);background:#e4f5f2}
+.trust{background:#0b2238}
+.trust .section-heading em{color:var(--teal)}
+.trust-card.featured{background:linear-gradient(135deg,rgba(36,99,166,.45),rgba(74,214,200,.09))}
+.avatar{border-color:var(--navy);background:var(--blue)}
+.avatar:nth-child(2){background:#168b87}.avatar:nth-child(3){background:#b76d27}.avatar:nth-child(4){background:#f0f6fa;color:var(--navy)}
+.trust-card .big{color:var(--teal)}
+.faq-question:hover{color:var(--blue)}
+.faq-item.open .faq-question span:last-child{color:var(--blue)}
+.footer{background:#081b2d;color:#f4f4f2;border-top:5px solid var(--teal)}
+.footer-title{color:#fff}
+.footer a:hover{color:var(--teal)!important}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.hero-copy{animation:heroRise .9s var(--ease) both}
+.hero-stamp{animation:stampIn 1s .25s var(--ease) both}
+@keyframes heroRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes stampIn{from{opacity:0;transform:rotate(-24deg) scale(.8)}to{opacity:1;transform:rotate(-12deg) scale(1)}}
+@media (prefers-reduced-motion:reduce){.hero-copy,.hero-stamp{animation:none!important}}
+
+
+.service-visuals{padding:82px var(--gutter);background:#e7f0f4}
+.service-visuals-heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}
+.service-visuals-heading>span{font:600 11px Arial,sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--blue)}
+.service-visuals-heading h2{font-size:clamp(32px,4.2vw,58px);font-weight:400;letter-spacing:-.05em;max-width:640px}
+.visual-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.visual-tile{height:330px;position:relative;overflow:hidden;background:var(--navy);color:#fff;isolation:isolate}
+.visual-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s var(--ease);filter:saturate(1.08)}
+.visual-tile:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(8,27,45,.88),rgba(8,27,45,.02) 80%)}
+.visual-tile:hover img{transform:scale(1.06)}
+.visual-tile>div{position:absolute;left:22px;right:22px;bottom:23px}
+.visual-tile span{font:600 10px Arial,sans-serif;letter-spacing:.13em;color:var(--teal)}
+.visual-tile h3{font-size:clamp(25px,3vw,37px);font-weight:400;margin-top:8px;letter-spacing:-.04em}
+.visual-heating{border-bottom:5px solid var(--orange)}.visual-drains{border-bottom:5px solid var(--teal)}.visual-install{border-bottom:5px solid var(--blue)}
+@media(max-width:800px){.service-visuals-heading{align-items:flex-start;flex-direction:column}.visual-grid{grid-template-columns:1fr}.visual-tile{height:280px}}
+
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Premium Plumbing home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" width="27" height="27"><path d="M8 4v8a8 8 0 0 0 16 0V4" fill="none" stroke="#4ad6c8" stroke-width="4" stroke-linecap="round"/><path d="M16 16c-4 5-6 7-6 10a6 6 0 0 0 12 0c0-3-2-5-6-10z" fill="#ffb35c"/></svg></span><span>Premium Plumbing<br><small style="font-family:Arial,sans-serif;font-size:9px;letter-spacing:.12em;font-weight:500">EXPERT SERVICE</small></span></a>
+  <nav class="nav-shell" aria-label="Main navigation">
+    <a class="active" href="#top">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#faq">FAQs</a>
+  </nav>
+  <div class="header-actions"><a class="text-link" href="tel:+15550148200">Call the team</a><a class="button" href="#booking">Book service <span class="arrow">↗</span></a><button class="mobile-menu" aria-label="Open navigation" id="mobileMenu">＋</button></div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="hero-photo"><img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1800&q=85" alt="Professional plumber working with pipe fittings in a residential setting"></div>
+    <div class="hero-copy">
+      <div class="eyebrow">Residential · Commercial · Repairs</div>
+      <h1><span>Plumbing,</span><span class="outline">handled.</span></h1>
+      <p class="hero-description">Good work. Clear answers. No drama. Plumbing service that respects your home, your time, and your budget.</p>
+      <div class="hero-bottom">
+        <a class="button" href="#booking">Book a service <span class="arrow">↗</span></a>
+        <div class="hero-note"><strong>Here when it matters</strong>Leak, blockage, installation or a problem you cannot quite explain. Start here.</div>
+      </div>
+    </div>
+    <div class="hero-stamp">PREMIUM PLUMBING<b>Pipe<br>&amp; Drain</b>EXPERT SERVICE</div>
+  </section>
+  <div class="ticker"><span>Plumbing for everyday life</span><span>Clear work. Considerate service.</span><span>Leaks · Drains · Fixtures · Water heaters</span></div>
+
+  <section class="section" id="about">
+    <div class="intro-grid">
+      <div class="reveal"><div class="section-kicker">01 / The approach</div><h2 class="section-heading">The right fix.<br><em>Without the runaround.</em></h2></div>
+      <div class="intro-copy reveal"><p>Plumbing problems interrupt real life. Our job is to make the next step simple, from the first conversation to the final check.</p><p>Tell us what is happening, choose a time to request, and get a clear update on what comes next. No made-up promises. Just practical service and straightforward communication.</p><a class="text-link" style="display:inline-block;margin-top:22px" href="#booking">Tell us what you need ↗</a></div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="services-top">
+      <div class="reveal"><div class="section-kicker">02 / What we do</div><h2 class="section-heading">Everyday issues.<br><em>Handled properly.</em></h2></div>
+      <p class="services-intro reveal">From a stubborn drain to a planned upgrade, tell us what is going on and we will help you choose the right next step.</p>
+    </div>
+    <div class="service-grid">
+      <a class="service-card reveal" href="#booking" data-service="Leak detection & pipe repair"><span class="service-number">01 / REPAIR</span><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h13v10h8v14h11M21 12v10M29 22h11" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 5c-4 5-6 7-6 10a6 6 0 0 0 12 0c0-3-2-5-6-10z" fill="#2463a6"/></svg></span><div><h3>Leaks &amp; pipes</h3><p>Leaking fittings, damaged pipes, and help locating hidden leaks.</p></div><span class="card-arrow">↗</span></a>
+      <a class="service-card reveal" href="#booking" data-service="Drain cleaning"><span class="service-number">02 / DRAINS</span><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="24" r="7" fill="none" stroke="#4ad6c8" stroke-width="4"/><path d="M24 2v7M24 39v7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><div><h3>Drain cleaning</h3><p>Slow sinks, blocked showers, and drainage issues that need attention.</p></div><span class="card-arrow">↗</span></a>
+      <a class="service-card reveal" href="#booking" data-service="Water heater service"><span class="service-number">03 / HOT WATER</span><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4c-8 10 5 12-3 21-4 4-6 8-3 13 3 5 10 6 15 2 7-6 4-14-2-20 1 7-4 8-4 12-6-8 4-16-3-28z" fill="#ffb35c"/><path d="M9 43h30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><div><h3>Water heaters</h3><p>Diagnosis, maintenance, replacement, and installation enquiries.</p></div><span class="card-arrow">↗</span></a>
+      <a class="service-card reveal" href="#booking" data-service="Toilet & fixture services"><span class="service-number">04 / FIXTURES</span><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 7h20v11H14zM18 18v9a8 8 0 0 0 16 0v-9M22 35v6h8v-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M34 11h7v8" fill="none" stroke="#ffb35c" stroke-width="3" stroke-linecap="round"/></svg></span><div><h3>Toilets &amp; taps</h3><p>Running toilets, dripping taps, sinks, showers, and fixture upgrades.</p></div><span class="card-arrow">↗</span></a>
+      <a class="service-card reveal" href="#booking" data-service="Sewer & water line services"><span class="service-number">05 / LINES</span><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 14c5-5 10 5 15 0s10 5 15 0M7 24c5-5 10 5 15 0s10 5 15 0M7 34c5-5 10 5 15 0s10 5 15 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="39" cy="34" r="4" fill="#4ad6c8"/></svg></span><div><h3>Sewer &amp; water lines</h3><p>Inspection and repair enquiries for sewer and water-line concerns.</p></div><span class="card-arrow">↗</span></a>
+      <a class="service-card reveal" href="#booking" data-service="Commercial plumbing"><span class="service-number">06 / BUSINESS</span><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 41V8h32v33M8 18h32M19 8v33M30 8v33" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M8 18h11v12H8z" fill="#2463a6"/></svg></span><div><h3>Commercial</h3><p>Plumbing support requests for workplaces and managed properties.</p></div><span class="card-arrow">↗</span></a>
+      <a class="service-card reveal" href="#booking" data-service="Installation & upgrades"><span class="service-number">07 / INSTALL</span><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7v34M7 24h34" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="24" r="17" fill="none" stroke="#4ad6c8" stroke-width="3"/></svg></span><div><h3>Installations</h3><p>New fixtures, replacements, and planned plumbing improvements.</p></div><span class="card-arrow">↗</span></a>
+      <a class="service-card reveal" href="#booking" data-service="General plumbing inspection"><span class="service-number">08 / CHECK</span><span class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 25l5 5 12-13" fill="none" stroke="#ffb35c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h3>Inspections</h3><p>Arrange an inspection or describe an issue you would like checked.</p></div><span class="card-arrow">↗</span></a>
+    </div>
+  </section>
+
+  <section class="service-visuals" aria-label="Plumbing service categories">
+    <div class="service-visuals-heading"><span>Built around your home</span><h2>From hot water to clear drains.</h2></div>
+    <div class="visual-grid">
+      <article class="visual-tile visual-heating"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=85" alt="Heating and mechanical equipment"><div><span>01 / HEATING</span><h3>Hot water, restored.</h3></div></article>
+      <article class="visual-tile visual-drains"><img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=900&q=85" alt="Plumbing pipework and fittings"><div><span>02 / PIPEWORK</span><h3>Repairs that make sense.</h3></div></article>
+      <article class="visual-tile visual-install"><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85" alt="Modern bathroom fixture installation"><div><span>03 / INSTALLATIONS</span><h3>Upgrade with confidence.</h3></div></article>
+    </div>
+  </section>
+
+  <section class="emergency" id="emergency">
+    <div class="emergency-image"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1400&q=85" alt="Tradesperson inspecting pipework and equipment"><div class="image-caption">When something needs attention</div></div>
+    <div class="emergency-content reveal"><div class="eyebrow">Need help urgently?</div><h2>Start with<br>what is happening.</h2><p>Tell us what has gone wrong and how to reach you. Submitting a request does not itself confirm a dispatch or arrival time.</p><a class="button" href="#booking" id="emergencyBook">Request urgent help <span class="arrow">↗</span></a><div class="emergency-small">If there is immediate danger, contact local emergency services.</div></div>
+  </section>
+
+  <section class="section booking" id="booking">
+    <div class="booking-layout">
+      <div class="booking-info reveal"><div class="section-kicker">03 / Book or request an estimate</div><h2 class="section-heading">Let's get the details.</h2><p>Share a few details and the team can follow up about your request. This demo form works locally in your browser and does not send your information to a server.</p><span class="contact-line">Prefer a call? <a class="text-link" href="tel:+15550148200">+1 (555) 014-8200</a></span></div>
+      <form class="booking-form reveal" id="bookingForm">
+        <div class="field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" required placeholder="Full name"></div>
+        <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" autocomplete="tel" type="tel" required placeholder="Best callback number"></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" autocomplete="email" type="email" placeholder="you@example.com"></div>
+        <div class="field"><label for="service">What do you need? *</label><select id="service" name="service" required><option value="">Choose a service</option><option>Leak detection & pipe repair</option><option>Drain cleaning</option><option>Water heater service</option><option>Toilet & fixture services</option><option>Sewer & water line services</option><option>Commercial plumbing</option><option>Installation & upgrades</option><option>General plumbing inspection</option><option>Other / not sure</option></select></div>
+        <div class="field"><label for="urgency">Urgency</label><select id="urgency" name="urgency"><option>Routine appointment</option><option>As soon as possible</option><option>Emergency request</option></select></div>
+        <div class="field"><label for="property">Property type</label><select id="property" name="property"><option>Residential</option><option>Commercial</option><option>Rental / managed property</option></select></div>
+        <div class="field full"><label for="address">Service address / area</label><input id="address" name="address" autocomplete="street-address" placeholder="Street, city, or ZIP code"></div>
+        <div class="field full"><label for="details">Describe the issue</label><textarea id="details" name="details" placeholder="What happened? Which fixture or area is affected?"></textarea></div>
+        <div class="form-footer"><p class="form-note">Please do not include payment details or other sensitive information.</p><button class="button" type="submit">Review request <span class="arrow">↗</span></button></div>
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section trust">
+    <div class="trust-top"><div class="reveal"><div class="section-kicker">04 / The service standard</div><h2 class="section-heading">Good service is<br><em>in the details.</em></h2></div><p class="reveal">We do not use invented ratings or made-up project counts. These are the principles the experience is built around.</p></div>
+    <div class="trust-grid">
+      <article class="trust-card featured reveal"><div><div class="avatar-row"><span class="avatar">JT</span><span class="avatar">PS</span><span class="avatar">DR</span><span class="avatar">+</span></div><div class="big">Clear</div></div><div><div class="label">Communication</div><p>Understand the request, the next step, and what still needs confirmation.</p></div></article>
+      <article class="trust-card reveal"><div><div class="big">01</div><div class="label">One clear process</div></div><p>From your first request to the follow-up, keep the details in one place.</p></article>
+      <article class="trust-card reveal"><div><div class="big">✓</div><div class="label">Respect for your space</div></div><p>Work should be explained, considered, and followed by a clear update.</p></article>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="faq-layout">
+      <div class="reveal"><div class="section-kicker">05 / Good to know</div><h2 class="section-heading">A few useful<br><em>answers.</em></h2></div>
+      <div class="faq-list reveal">
+        <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Does submitting the form confirm a booking?</span><span>＋</span></button><div class="faq-answer"><p>No. The form is a request only. A booking is confirmed when the business reviews the request and confirms an appointment.</p></div></div>
+        <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Can I request an estimate first?</span><span>＋</span></button><div class="faq-answer"><p>Yes. Choose the closest service and explain what you need in the details field. The team can follow up about the information needed to prepare an estimate.</p></div></div>
+        <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>What if I am not sure which service I need?</span><span>＋</span></button><div class="faq-answer"><p>Select “Other / not sure” and describe the symptoms. The team can help route your request to the right service category.</p></div></div>
+        <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Where do you provide service?</span><span>＋</span></button><div class="faq-answer"><p>Service coverage has not been configured in this demo. Add your actual service areas, business hours, and emergency availability before publishing.</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer-top"><h2 class="footer-title">A better fix<br>starts here.</h2><div class="footer-right">PREMIUM PLUMBING PLUMBING SERVICES<br><a href="#booking" style="color:#fff;border-bottom:1px solid #777">Request a service ↗</a><br><a href="#services">Services</a> · <a href="#faq">FAQs</a><br><br>Phone shown is demo contact information.</div></div>
+  <div class="footer-bottom"><span>© <span id="year"></span> Premium Plumbing</span><span>Clear communication. Considerate work.</span><a href="#top">Back to top ↑</a></div>
+</footer>
+<script>
+(() => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reveal content as it enters the viewport.
+  const revealItems = [...document.querySelectorAll('.reveal')];
+  if ('IntersectionObserver' in window && !reducedMotion) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    revealItems.forEach((item, index) => {
+      item.style.transitionDelay = `${Math.min(index % 4, 3) * 65}ms`;
+      observer.observe(item);
+    });
+  } else {
+    revealItems.forEach(item => item.classList.add('visible'));
+  }
+
+  // Service cards preselect the related service in the request form.
+  document.querySelectorAll('[data-service]').forEach(card => {
+    card.addEventListener('click', () => {
+      const select = document.getElementById('service');
+      const choice = card.dataset.service;
+      [...select.options].forEach(option => {
+        if (option.text.toLowerCase() === choice.toLowerCase()) select.value = option.value;
+      });
+    });
+  });
+
+  // FAQ accordion.
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      const willOpen = !item.classList.contains('open');
+      item.classList.toggle('open', willOpen);
+      button.setAttribute('aria-expanded', String(willOpen));
+    });
+  });
+
+  // Small-screen menu opens a simple in-page navigation panel.
+  const menu = document.getElementById('mobileMenu');
+  menu.addEventListener('click', () => {
+    let panel = document.getElementById('mobileNavPanel');
+    if (panel) {
+      panel.remove();
+      menu.textContent = '＋';
+      menu.setAttribute('aria-label', 'Open navigation');
+      return;
+    }
+    panel = document.createElement('nav');
+    panel.id = 'mobileNavPanel';
+    panel.setAttribute('aria-label', 'Mobile navigation');
+    Object.assign(panel.style, {
+      position:'absolute', top:'66px', right:'0', display:'grid', minWidth:'175px',
+      padding:'8px', background:'#f3f3f1', border:'1px solid #111', gap:'2px'
+    });
+    [['Home','#top'],['Services','#services'],['About','#about'],['FAQs','#faq'],['Book service','#booking']].forEach(([label, href]) => {
+      const link = document.createElement('a');
+      link.href = href;
+      link.textContent = label;
+      Object.assign(link.style,{padding:'12px',fontSize:'16px'});
+      link.addEventListener('click', () => { panel.remove(); menu.textContent='＋'; });
+      panel.appendChild(link);
+    });
+    document.querySelector('.site-header').appendChild(panel);
+    menu.textContent = '×';
+    menu.setAttribute('aria-label', 'Close navigation');
+  });
+
+  // Demo form: validates input and creates a local review summary only.
+  const form = document.getElementById('bookingForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const service = String(data.get('service') || '').trim();
+    const urgency = String(data.get('urgency') || '').trim();
+    status.textContent = `Request prepared for ${name}. Service: ${service}. Priority: ${urgency}. This is a front-end demo only; nothing has been sent or booked. Connect a secure backend and notification service before using this form with real customers.`;
+    status.classList.add('show');
+    status.scrollIntoView({behavior: reducedMotion ? 'auto' : 'smooth', block:'nearest'});
+  });
+
+  // Smoothly mark the visible navigation section.
+  const navLinks = [...document.querySelectorAll('.nav-shell a')];
+  const sections = ['top','services','about','faq'].map(id => document.getElementById(id)).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+      });
+    }, {rootMargin:'-35% 0px -55% 0px'});
+    sections.forEach(section => navObserver.observe(section));
+  }
+})();
+</script>
+</body>
+</html>
